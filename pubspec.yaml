@@ -36,7 +36,7 @@ dependencies:
   awesome_dialog: ^1.2.0
   dio: ^3.0.10
   permission_handler: ^5.0.1+1
-  image_gallery_saver: ^1.5.0
+  image_gallery_saver: ^1.6.7
   get:
   auto_size_text: ^2.1.0
   share: ^0.6.5+4

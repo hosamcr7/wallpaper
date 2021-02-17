@@ -45,7 +45,7 @@ class Backend with ChangeNotifier{
   Widget categoryImagesStream({categoryType}){
     ScrollController _scrollController =  ScrollController();
     return  StreamBuilder<QuerySnapshot>(
-        stream: _firestore.collection('categories').doc(categoryType).collection('images').snapshots() ,
+        stream: _firestore.collection('categories').doc(categoryType).collection('images').orderBy('time',descending:true ).snapshots() ,
         builder: (context, snapshot){
           if(snapshot.hasData){
             List<ImageCard> card=[];
@@ -88,7 +88,7 @@ class Backend with ChangeNotifier{
   Widget allWallpapersStream(){
     ScrollController _scrollController =  ScrollController();
     return  StreamBuilder<QuerySnapshot>(
-        stream: _firestore.collection('all').snapshots() ,
+        stream: _firestore.collection('all').orderBy('time',descending:true ).snapshots() ,
         builder: (context, snapshot){
           if(snapshot.hasData){
             List<ImageCard> card=[];
